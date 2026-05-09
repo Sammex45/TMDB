@@ -1,0 +1,490 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "The Movie DB",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "https://api.themoviedb.org"
+    },
+    {
+      "url": ""
+    }
+  ],
+  "paths": {
+    "/3/account/{22845422}": {
+      "get": {
+        "summary": "Details",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/account/{22845422}/favorite": {
+      "post": {
+        "summary": "Add Favourite",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "media_type": {
+                    "type": "string"
+                  },
+                  "media_id": {
+                    "type": "integer"
+                  },
+                  "favorite": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "example": {
+                "media_type": "movie",
+                "media_id": 550,
+                "favorite": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "/3/account/{22845422}/watchlist": {
+      "post": {
+        "summary": "Add To Watchlist",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "media_type": {
+                    "type": "string"
+                  },
+                  "media_id": {
+                    "type": "integer"
+                  },
+                  "watchlist": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "example": {
+                "media_type": "movie",
+                "media_id": 550,
+                "watchlist": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "/3/account/{account_id}/favorite/movies": {
+      "get": {
+        "summary": "Favorite Movies",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "query",
+            "required": false,
+            "deprecated": false,
+            "schema": {},
+            "example": "22845422"
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/3/account/{account_id}/favorite/tv": {
+      "get": {
+        "summary": "Favorite TV",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": 22845422
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/account/{account_id}/lists": {
+      "get": {
+        "summary": "Lists",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/account/{22845422}/rated/movies": {
+      "get": {
+        "summary": "Rated Movies",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/account/{22845422}/rated/tv": {
+      "get": {
+        "summary": "Rated TV",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/account/{22845422}/rated/tv/episodes": {
+      "get": {
+        "summary": "Rated TV Episodes",
+        "responses": {}
+      }
+    },
+    "/3/account/{22845422}/watchlist/movies": {
+      "get": {
+        "summary": "Watchlist Movies",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/account/{22845422}/watchlist/tv": {
+      "get": {
+        "summary": "Watchlist TV",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/authentication/guest_session/new": {
+      "get": {
+        "summary": "Create Guest Session",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/authentication/token/new": {
+      "get": {
+        "summary": "Create Request Token",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/authentication/session/new": {
+      "post": {
+        "summary": "Create Session",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "request_token": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "request_token": "e27ad5b731ba490fad7bcf13db2d9b5b560a389e"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/3/authentication/session/convert/4": {
+      "post": {
+        "summary": "Create Session (from v4 token)",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "request_token": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "request_token": "e27ad5b731ba490fad7bcf13db2d9b5b560a389e"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/3/authentication/token/validate_with_login": {
+      "post": {
+        "summary": "Create Session (with login)",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "request_token": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "request_token": "e27ad5b731ba490fad7bcf13db2d9b5b560a389e",
+                "username": "SAMMY011",
+                "password": "Sammy1999#"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/3/authentication/session": {
+      "delete": {
+        "summary": "Delete Session",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "session_id": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "session_id": "e27ad5b731ba490fad7bcf13db2d9b5b560a389e"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Validate Key",
+        "responses": {}
+      }
+    },
+    "/3/certification/movie/list": {
+      "get": {
+        "summary": "Movie Certifications",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/certification/tv/list": {
+      "get": {
+        "summary": "TV Certifications",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/movie/changes": {
+      "get": {
+        "summary": "Movie List",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/person/changes": {
+      "get": {
+        "summary": "People List",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/tv/changes": {
+      "get": {
+        "summary": "TV List",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/collection/10": {
+      "get": {
+        "summary": "Details",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/collection/10/images": {
+      "get": {
+        "summary": "Images",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/collection/10/translations": {
+      "get": {
+        "summary": "Translations",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/company/1": {
+      "get": {
+        "summary": "Details",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/company/1/alternative_names": {
+      "get": {
+        "summary": "Alternative Names",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    },
+    "/3/company/1/images": {
+      "get": {
+        "summary": "Images",
+        "responses": {},
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
